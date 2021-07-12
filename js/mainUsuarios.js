@@ -73,33 +73,19 @@ $(document).ready(function() {
                                 if (i == index) {
                                     table.$(cell).find('#btnBajasId').addClass('btnBajas').removeClass('botonActivos');
                                 }
-
                             }
-
                         });
-
                     });
-
-
                 }
             });
-
-
         },
-
     });
-
-
-
 
     //esta variable cambiarla at the beginning
     var fila; //capturar la fila para editar o dar de baja usuario
 
-
-
     //validación de formulario
     $("#formUsuarios").validate({
-
         rules: {
 
             Nombre_usuario: "required",
@@ -143,7 +129,6 @@ $(document).ready(function() {
                 minlength: "Debe de tener al menos 8 dígitos",
                 equalTo: "La contraseña no coincide"
 
-
             },
             Telefono_usuario: {
                 required: "Por favor digite un número",
@@ -163,25 +148,16 @@ $(document).ready(function() {
             
         }*/
         highlight: function(element, errorClass, validClass) {
-
             $(element).css("border-color", "red");
-
             $(element).closest('div').addClass("has-error").removeClass("has-success");
-
-
         },
+
         unhighlight: function(element, errorClass, validClass) {
-
-
-
             $(element).css("border-color", "#ccc");
-
             $(element).closest('div').addClass("has-success").removeClass("has-error");
         },
+
         submitHandler: function(e) {
-
-
-
             if (formulario === 'alta') {
                 opcion = 1;
 
@@ -195,8 +171,6 @@ $(document).ready(function() {
             
             NEW SUGGESTION:
             YOU SHOULD HAVE SENT JUST THE EMAIL
-
-
             */
 
             Nombre_usuario = $.trim($('#Nombre_usuario').val());
@@ -215,8 +189,6 @@ $(document).ready(function() {
                 dataType: "json",
                 data: { Nombre_usuario: Nombre_usuario, Apellido_usuario: Apellido_usuario, Password_usuario: Password_usuario, Telefono_usuario: Telefono_usuario, Email_usuario: Email_usuario, Id_tipo_usuario: Id_tipo_usuario, Id_departamento: Id_departamento, opcion: opcion, Email_consulta: Email_consulta, Status_usuario: Status_usuario },
                 success: function(data) {
-
-
                     if (formulario === 'alta') {
                         Swal.fire(
                             'Completado',
@@ -224,9 +196,7 @@ $(document).ready(function() {
                             'success'
                         );
 
-
-                    } else if (formulario === 'edicion') {
-
+                    } else if (formulario === 'edicion') {\
                         Swal.fire(
                             'Completado',
                             'El usuario ha sido editado',
@@ -277,7 +247,6 @@ $(document).ready(function() {
                         }
                     });
                     //===================================
-
                 }
 
             });
@@ -293,12 +262,7 @@ $(document).ready(function() {
 
     });
 
-
-
-
-
     //AgregarUsuario
-
     $('#btnAgregarUsuario').click(function(e) {
         //reiniciar valores
         var validator = $("#formUsuarios").validate();
@@ -325,15 +289,11 @@ $(document).ready(function() {
 
     });
 
-
-
     //función Editar Usuario
-
     $(document).on("click", ".btnEditar", function(e) {
         //reiniciar valores
         var validator = $("#formUsuarios").validate();
         validator.resetForm();
-
 
         //opcion = 3; //Select para obtener datos de campos
         //opción 8 para validar el email en form
@@ -418,7 +378,6 @@ $(document).ready(function() {
                     confirmButtonText: 'Aceptar'
                 }).then((result) => {
                     if (result.isConfirmed) {
-
                         statusTemporal = 0;
                         Swal.fire(
                             'Completado',
