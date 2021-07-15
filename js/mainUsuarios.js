@@ -5,7 +5,7 @@ $(document).ready(function() {
 
     tablaUsuarios = $('#tablaUsuarios').DataTable({
         "ajax": {
-            "url": "../../paqueteria/bd/abcUsuarios.php",
+            "url": "../../paqueteria-github/bd/abcUsuarios.php",
             "method": 'POST',
             "data": { opcion: opcion },
             "dataSrc": ""
@@ -50,7 +50,7 @@ $(document).ready(function() {
             var option = 7;
 
             $.ajax({
-                url: "../../paqueteria/bd/abcUsuarios.php",
+                url: "../../paqueteria-github/bd/abcUsuarios.php",
                 type: "POST",
                 dataType: "json",
                 data: { opcion: option },
@@ -95,7 +95,8 @@ $(document).ready(function() {
     //esta variable cambiarla at the beginning
     var fila; //capturar la fila para editar o dar de baja usuario
 
-
+    //=================aquí empieza la validación del formulario=======================
+    //=================aquí empieza la validación del formulario=======================
 
     //validación de formulario
     $("#formUsuarios").validate({
@@ -122,11 +123,13 @@ $(document).ready(function() {
                 required: true,
                 email: true,
                 remote: {
-                    url: "../../paqueteria/bd/abcUsuarios.php",
+                    url: "../../paqueteria-github/bd/validarEmail.php",
                     type: "POST",
                     dataType: "json",
-                    data: { opcion: opcion, Email_usuario: function() { return $("#Email_usuario").val(); } }
+                    data: { Email_usuario: function() { return $("#Email_usuario").val(); } }
                 }
+
+
             }
 
         },
@@ -154,7 +157,7 @@ $(document).ready(function() {
             Email_usuario: {
                 required: "Por favor ingrese un correo electrónico",
                 email: "Debe contener '@' , '.' + dominio",
-                remote: "Email en uso, Por favor intente con otro",
+                //remote: "Email en uso, Por favor intente con otro",
             }
         },
         /*errorElement: "em",
@@ -178,7 +181,7 @@ $(document).ready(function() {
 
             $(element).closest('div').addClass("has-success").removeClass("has-error");
         },
-        submitHandler: function(e) {
+        submitHandler: function(form) {
 
 
 
@@ -210,7 +213,7 @@ $(document).ready(function() {
 
 
             $.ajax({
-                url: "../../paqueteria/bd/abcUsuarios.php",
+                url: "../../paqueteria-github/bd/abcUsuarios.php",
                 type: "POST",
                 dataType: "json",
                 data: { Nombre_usuario: Nombre_usuario, Apellido_usuario: Apellido_usuario, Password_usuario: Password_usuario, Telefono_usuario: Telefono_usuario, Email_usuario: Email_usuario, Id_tipo_usuario: Id_tipo_usuario, Id_departamento: Id_departamento, opcion: opcion, Email_consulta: Email_consulta, Status_usuario: Status_usuario },
@@ -241,7 +244,7 @@ $(document).ready(function() {
                     var option = 7;
 
                     $.ajax({
-                        url: "../../paqueteria/bd/abcUsuarios.php",
+                        url: "../../paqueteria-github/bd/abcUsuarios.php",
                         type: "POST",
                         dataType: "json",
                         data: { opcion: option },
@@ -286,14 +289,14 @@ $(document).ready(function() {
             var validator = $("#formUsuarios").validate();
             validator.resetForm();
             //validator.destroy();
-
+            //form.submit();
             $("#modalUsuario").modal("hide");
             //form.submit();
         }
 
     });
-
-
+    //=================hasta aquí termina la validación del formulario=======================
+    //=================hasta aquí termina la validación del formulario=======================
 
 
 
@@ -305,9 +308,9 @@ $(document).ready(function() {
         //validator.destroy();
         validator.resetForm();
 
-        //opcion = 1; //alta
+        opcion = 1; //alta
         //opción 8 para validar el email en form
-        opcion = 8;
+        //opcion = 8;
         Id_usuario = null;
         //Email_consulta = '';
         formulario = 'alta';
@@ -335,9 +338,9 @@ $(document).ready(function() {
         validator.resetForm();
 
 
-        //opcion = 3; //Select para obtener datos de campos
+        opcion = 3; //Select para obtener datos de campos
         //opción 8 para validar el email en form
-        opcion = 8;
+        //opcion = 2;
         formulario = 'edicion';
         fila = $(this).closest("tr");
         //Id_usuario = parseInt(fila.find('td:eq(1)').text());
@@ -345,7 +348,7 @@ $(document).ready(function() {
         Email_consulta = fila.find('td:eq(3)').text();
         //swal.fire(`${Email_consulta}`);
         $.ajax({
-            url: "../../paqueteria/bd/abcUsuarios.php",
+            url: "../../paqueteria-github/bd/abcUsuarios.php",
             type: "POST",
             dataType: "json",
             data: { Email_consulta: Email_consulta, Nombre_usuario: "", Apellido_usuario: "", Password_usuario: "", Telefono_usuario: "", Email_usuario: "", Id_tipo_usuario: "", Id_departamento: "", opcion: opcion },
@@ -479,7 +482,7 @@ $(document).ready(function() {
         opcion = 6;
         //se consulta el status actual del usuario
         $.ajax({
-            url: "../../paqueteria/bd/abcUsuarios.php",
+            url: "../../paqueteria-github/bd/abcUsuarios.php",
             type: "POST",
             dataType: "json",
             data: { opcion: opcion, Email_consulta: Email_consulta, Status_usuario: Status_usuario },
@@ -495,7 +498,7 @@ $(document).ready(function() {
     function CambiarEstadousuario(Email_consulta, status) {
         opcion = 5;
         $.ajax({
-            url: "../../paqueteria/bd/abcUsuarios.php",
+            url: "../../paqueteria-github/bd/abcUsuarios.php",
             type: "POST",
             dataType: "json",
             data: { Status_usuario: status, opcion: opcion, Email_consulta: Email_consulta },

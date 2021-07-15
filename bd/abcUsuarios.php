@@ -23,7 +23,7 @@ $Email_consulta = (isset($_POST['Email_consulta'])) ? $_POST['Email_consulta'] :
 
 $Status_usuario = (isset($_POST['Status_usuario'])) ? $_POST['Status_usuario'] : '';
 
-$response = 'false';
+//$response = 'false';
 /*if($opcion != 5){
     $Status_usuario = 1; //activo
 } else {    
@@ -100,29 +100,23 @@ switch($opcion){
         
     break;
 
-    case 8:
+    // case 8:
         
-        $consulta = "SELECT Email_usuario FROM usuarios WHERE Email_usuario='$Email_usuario'";
-        $resultado = $conexion->prepare($consulta);
-        $resultado->execute();
-        $filas = $resultado->fetchAll();
-        $total_filas = count($filas);
-        if($total_filas > 0 ){
-            $response = 'false';
-        }else{
-            $response = 'true';
-        }
+    //     $consulta = "SELECT Email_usuario FROM usuarios WHERE Email_usuario='$Email_usuario'";
+    //     $resultado = $conexion->prepare($consulta);
+    //     $resultado->execute();
+    //     $filas = $resultado->fetchAll();
+    //     $total_filas = count($filas);
+    //     if($total_filas > 0 ){
+    //         $response = 'false';
+    //     }else{
+    //         $response = 'true';
+    //     }
 
-    break;
+    // break;
 }
 
-if($opcion == 8){
-    print $response;
-
-}else{
-    print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en formato json a JS
-
-}
+    print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en
 
 
 $conexion = NULL;
