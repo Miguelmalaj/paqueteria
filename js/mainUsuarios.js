@@ -157,7 +157,7 @@ $(document).ready(function() {
             Email_usuario: {
                 required: "Por favor ingrese un correo electrónico",
                 email: "Debe contener '@' , '.' + dominio",
-                //remote: "Email en uso, Por favor intente con otro",
+                remote: $.validator.format("{0} ya está asociado con una cuenta")
             }
         },
         /*errorElement: "em",
@@ -538,7 +538,7 @@ $(document).ready(function() {
 //TASKS
 //1-cargar las opciones de los select en el form, desde bd
 
-//2-Me falta validar el email para que no se repita en la base de datos.... 
+
 
 /*
             LA IDEA AQUI ES CREAR OTRA CONSULTA AJAX CON LAS VARIABLES NOMBRE, NÚMERO e EMAIL PARA CONFIRMAR QUE EL USUARIO NO SE ENCUENTRA EN LA BD ENTONCES YOU CAN REGISTER THE USER
@@ -557,3 +557,4 @@ $(document).ready(function() {
 
 //Agregamos la opción disabled - enable en el form editar
 //en el label e input contraseña.
+//validar el email para que no se repita en la base de datos....
