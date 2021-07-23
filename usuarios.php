@@ -18,11 +18,7 @@
     <link rel="stylesheet" href="css/jquery.dataTables.min.css">
     <!---RESPONSIVE--->
     <link rel="stylesheet" href="css/responsive.dataTables.min.css">
-
-   
-
-
-    <!-- Font Awesome JS -->
+<!-- Font Awesome JS -->
     
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     
@@ -31,11 +27,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+      <!--JQUERY-->
+    <script src="js/jquery.min.js"></script>
+
+      <script type="text/javascript" src="js/estructurasHTML.js"></script>  
 </head>
 
 <body>
 
- 
 
     <!-- Modal -->
     <div class="modal fade" id="modalUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -91,7 +90,6 @@
             
           </div>
           
-         
           <div class="form-group col-md-6">
             <label for="telefono-u">Teléfono</label>
             <input type="tel" class="form-control" id="Telefono_usuario" placeholder="10 dígitos" name="Telefono_usuario">
@@ -104,30 +102,13 @@
           
           <div class="form-group col-md-6">
           <label for="exampleFormControlSelect1">Tipo Usuario</label>
-                        
-            <select class="form-control" id="Id_tipo_usuario">
-              <option value="1">Administrador</option>
-              <option value="2">Director</option>
-              <option value="3">Coordinador</option>
-              <option value="4">Recepcionista</option>              
-            </select>
-            
+            <span id="lugarSelectorUsuarios" ></span>  
           </div>
-          
           
           <div class="form-group col-md-6">
           <label for="exampleFormControlSelect1">Departamento</label>
-             
-             <select class="form-control" id="Id_departamento">
-              <option value="1">Desarrollo Tecnológico</option>
-              <option value="2">Soporte Tecnológico</option>
-              <option value="3">Diseño</option>
-              <option value="4">Video</option>
-            </select>
-             
+          <span id="lugarSelectorDepartamentos" ></span>
           </div>
-          
-          
           
          </div>
       </div>
@@ -264,8 +245,7 @@
 
 
     <!---------------------------------------------------------------------------------------------------->
-    <!--JQUERY-->
-    <script src="js/jquery.min.js"></script>
+    
     <!--POOPER-->
     <scrpt src="js/popper.min.js"></scrpt>
     <!--BOOTSTRAP JS-->

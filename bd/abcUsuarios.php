@@ -100,20 +100,6 @@ switch($opcion){
         
     break;
 
-    // case 8:
-        
-    //     $consulta = "SELECT Email_usuario FROM usuarios WHERE Email_usuario='$Email_usuario'";
-    //     $resultado = $conexion->prepare($consulta);
-    //     $resultado->execute();
-    //     $filas = $resultado->fetchAll();
-    //     $total_filas = count($filas);
-    //     if($total_filas > 0 ){
-    //         $response = 'false';
-    //     }else{
-    //         $response = 'true';
-    //     }
-
-    // break;
 }
 
     print json_encode($data, JSON_UNESCAPED_UNICODE); //enviar el array final en

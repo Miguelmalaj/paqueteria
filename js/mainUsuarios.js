@@ -536,7 +536,8 @@ $(document).ready(function() {
 
 
 //TASKS
-//1-cargar las opciones de los select en el form, desde bd
+//1.pasar la primera estructura donde carga la tabla con los datos...
+//2. pasar la validación a otro archivo js
 
 
 
@@ -549,6 +550,8 @@ $(document).ready(function() {
 
 //MISTAKES
 //// and other bug is that when I see the users on the phone doesn't work the active-desactive users.
+
+//in mobile mode I have found many errors, 1- I can not change the status of a user nither can get the information about a user when the edit button is pressed.
 
 
 //ACHIEVEMENTS
