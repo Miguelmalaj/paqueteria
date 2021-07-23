@@ -536,9 +536,10 @@ $(document).ready(function() {
 
 
 //TASKS
-//1-cargar las opciones de los select en el form, desde bd
+//1.pasar la primera estructura donde carga la tabla con los datos...
+//2. pasar la validación a otro archivo js
 
-//2-Me falta validar el email para que no se repita en la base de datos.... 
+
 
 /*
             LA IDEA AQUI ES CREAR OTRA CONSULTA AJAX CON LAS VARIABLES NOMBRE, NÚMERO e EMAIL PARA CONFIRMAR QUE EL USUARIO NO SE ENCUENTRA EN LA BD ENTONCES YOU CAN REGISTER THE USER
@@ -550,6 +551,8 @@ $(document).ready(function() {
 //MISTAKES
 //// and other bug is that when I see the users on the phone doesn't work the active-desactive users.
 
+//in mobile mode I have found many errors, 1- I can not change the status of a user nither can get the information about a user when the edit button is pressed.
+
 
 //ACHIEVEMENTS
 //NOTAS PARA LA PRÓXIMA ENTREGA
@@ -557,3 +560,5 @@ $(document).ready(function() {
 
 //Agregamos la opción disabled - enable en el form editar
 //en el label e input contraseña.
+//1-cargar las opciones de los select en el form, desde bd
+//2-Me falta validar el email para que no se repita en la base de datos....
