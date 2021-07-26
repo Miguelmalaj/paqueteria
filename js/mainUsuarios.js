@@ -324,6 +324,7 @@ $(document).ready(function() {
         $("#lbl-confirm-contra").show();
         $("#Confirmar_password").show();
         $("#Confirmar_password").prop('disabled', false);
+        $('#Email_usuario').prop('disabled', false);
         $("#modalUsuario").modal("show");
 
     });
@@ -358,7 +359,7 @@ $(document).ready(function() {
                 Apellido = data[0].Apellido_usuario;
                 Password = data[0].Password_usuario;
                 Telefono = data[0].Telefono_usuario;
-                Email = data[0].Email_usuario;
+                //Email = data[0].Email_usuario;
                 tipo_usuario = data[0].Id_tipo_usuario;
                 departamento = data[0].Id_departamento;
                 //Status_usu = data[0].Status_usuario;
@@ -389,6 +390,9 @@ $(document).ready(function() {
         $("#lbl-confirm-contra").hide();
         $("#Confirmar_password").hide();
         $("#modalUsuario").modal("show");
+
+        //modificación en input email lo cambiamos a disabled
+        $('#Email_usuario').prop('disabled', true);
 
     });
 
