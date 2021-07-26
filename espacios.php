@@ -91,10 +91,10 @@
                     <a href="#tbl2"><i class="fas fa-box-open mr-2 ml-3 lead"></i>Registros</a>
                 </li>
                 <li>
-                    <a href="#tbl3"><i class="fas fa-users mr-2 ml-3 lead"></i>Usuarios</a>
+                    <a href="usuarios.php"><i class="fas fa-users mr-2 ml-3 lead"></i>Usuarios</a>
                 </li>
                 <li>
-                    <a href="#tbl4"><i class="fas fa-building mr-3 ml-3 lead"></i>Espacios</a>
+                    <a href="espacios.php"><i class="fas fa-building mr-3 ml-3 lead"></i>Espacios</a>
                 </li>
 
                 <li class="active">
